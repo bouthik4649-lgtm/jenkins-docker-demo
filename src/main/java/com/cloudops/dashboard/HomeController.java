@@ -8,6 +8,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "CloudOps Infrastructure Monitoring & Deployment Dashboard is running!";
+       return "CloudOps Infrastructure Monitoring & Deployment Dashboard - CI/CD is working!";
     }
 }
