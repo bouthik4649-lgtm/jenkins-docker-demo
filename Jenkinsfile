@@ -12,20 +12,20 @@ pipeline {
 
         stage('Maven Build') {
             steps {
-                bat 'mvn clean package'
+                bat 'C:\\DevTools\\apache-maven-3.9.16\\bin\\mvn.cmd clean package'
             }
         }
 
         stage('Unit Test') {
             steps {
-                bat 'mvn test'
+                bat 'C:\\DevTools\\apache-maven-3.9.16\\bin\\mvn.cmd test'
             }
         }
 
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    bat 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=CloudOps-dashboard -Dsonar.projectName=CloudOps-dashboard'
+                    bat 'C:\\DevTools\\apache-maven-3.9.16\\bin\\mvn.cmd verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=CloudOps-dashboard -Dsonar.projectName=CloudOps-dashboard'
                 }
             }
         }
