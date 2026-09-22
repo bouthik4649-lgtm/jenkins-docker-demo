@@ -37,11 +37,11 @@
         }
 
         stage('Docker Run') {
-            steps {
-                bat 'docker stop jenkins-demo 2>NUL || exit 0'
-                bat 'docker rm jenkins-demo 2>NUL || exit 0'
-                bat 'docker run -d --name jenkins-demo -p 8081:8080 jenkins-docker-demo'
-            }
-        }
+    steps {
+        bat 'docker stop jenkins-docker-demo-container 2>NUL || exit 0'
+        bat 'docker rm jenkins-docker-demo-container 2>NUL || exit 0'
+        bat 'docker run -d --name jenkins-docker-demo-container -p 8081:8080 jenkins-docker-demo'
+    }
+}
     }
 }
